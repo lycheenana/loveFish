@@ -8,7 +8,7 @@ var momObj=function(){
 	this.eyeTimer;
 	this.eyeInterval;
 	this.numBody;
-
+	this.momType;
 }
 momObj.prototype.init=function(){
 	this.x=canWidth*0.5;
@@ -20,6 +20,7 @@ momObj.prototype.init=function(){
 	this.eyeTimer=0;
 	this.eyeInterval=50;
 	this.numBody=0;
+	this.momType="orange";
 }
 momObj.prototype.draw=function(){
 	this.x=pointDistance(mx,this.x,0.98);
@@ -58,7 +59,11 @@ momObj.prototype.draw=function(){
 	ctx2.translate(this.x,this.y);
 	ctx2.rotate(this.angle);
 	ctx2.drawImage(momTail[numTail],-momTail[numTail].width*0.5+30,-momTail[numTail].height*0.5);
-	ctx2.drawImage(momBody[numBody],-momBody[numBody].width*0.5,-momBody[numBody].height*0.5);
+	if(this.momType=="blue"){
+		ctx2.drawImage(momBodyBlue[numBody],-momBodyBlue[numBody].width*0.5,-momBodyBlue[numBody].height*0.5);
+	}else{
+		ctx2.drawImage(momBodyOra[numBody],-momBodyOra[numBody].width*0.5,-momBodyOra[numBody].height*0.5);
+	}	
 	ctx2.drawImage(momEye[numEye],-momEye[numEye].width*0.5,-momEye[numEye].height*0.5);
 	ctx2.restore();	
 }

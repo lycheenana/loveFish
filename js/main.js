@@ -16,13 +16,20 @@ var anePic=[];
 var fruit;
 var mom;
 var momTail=[];
-var momBody=[];
+var momBodyOra=[];
+var momBodyBlue=[];
 var momEye=[];
+
+var baby;
+var babyTail=[];
+var babyBody=[];
+var babyEye=[];
 
 //定义鼠标移动坐标
 var mx;
 var my;
 
+var data;
 window.onload=main;
 
 function main(){
@@ -62,6 +69,11 @@ function init(){
 	mom=new momObj();
 	mom.init();	
 
+	baby=new babyObj();
+	baby.init();
+
+	data=new dataObj();
+
 	//海葵图片初始化
 	for(var i=0;i<7;i++){
 		anePic[i]=new Image();
@@ -77,8 +89,24 @@ function init(){
 		momEye[i].src="./img/momEye"+i+".png";
 	}
 	for(var i=0;i<8;i++){
-		momBody[i]=new Image();
-		momBody[i].src="./img/momSwim"+i+".png";
+		momBodyOra[i]=new Image();
+		momBodyBlue[i]=new Image();
+		momBodyOra[i].src="./img/momSwim"+i+".png";
+		momBodyBlue[i].src="./img/momSwimBlue"+i+".png";
+	}
+
+	//小鱼baby图片初始化
+	for(var i=0;i<8;i++){
+		babyTail[i]=new Image();
+		babyTail[i].src="./img/babyTail"+i+".png";
+	}
+	for(var i=0;i<20;i++){
+		babyBody[i]=new Image();
+		babyBody[i].src="./img/babyFade"+i+".png";
+	}
+	for(var i=0;i<2;i++){
+		babyEye[i]=new Image();
+		babyEye[i].src="./img/babyEye"+i+".png";
 	}
 }
 function gameLoop(){
@@ -98,12 +126,17 @@ function gameLoop(){
 
 	momFruitCollision();
 	mom.draw();
+
+	momBabyCollision();
+	baby.draw();
 }
 
 function onMouseMove(e){
-	if(e.offsetX||e.layerX)
-	{
-		mx=e.offsetX==undefined?e.layerX:e.offsetX;
-		my=e.offsetY==undefined?e.layerY:e.offsetY;
-	}
+	if(!data.gameOver){
+		if(e.offsetX||e.layerX)
+		{
+			mx=e.offsetX==undefined?e.layerX:e.offsetX;
+			my=e.offsetY==undefined?e.layerY:e.offsetY;
+		}
+	}	
 }
