@@ -1,3 +1,4 @@
+//浮动的海葵
 var aneObj=function(){
 	this.x=[];
 	this.y=[];

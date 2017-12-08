@@ -1,3 +1,4 @@
+//橘色和蓝色的果实
 var Num=[];
 var fruitObj=function(){
 	this.x=[];

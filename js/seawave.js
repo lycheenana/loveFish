@@ -1,3 +1,4 @@
+//飘动的海草
 var seawaveObj=function(){
 	this.rootx=[];
 	this.headx=[];
