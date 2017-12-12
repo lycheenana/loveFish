@@ -129,6 +129,9 @@ function gameLoop(){
 
 	momBabyCollision();
 	baby.draw();
+
+	//更新得分
+	data.draw();
 }
 
 function onMouseMove(e){
