@@ -30,9 +30,7 @@ var mx;
 var my;
 
 var data;
-window.onload=main;
-
-function main(){
+window.onload=function(){
 	lastTime=Date.now();
 	deltaTime=0;
 
