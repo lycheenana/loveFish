@@ -16,7 +16,6 @@ function momFruitCollision(){
 				}else{
 					data.double=1;
 				}
-				data.addScore();
 			}
 		}
 	}
@@ -30,7 +29,6 @@ function momBabyCollision(){
 		//大鱼投食给小鱼后恢复生命值（身体颜色初始化）
 		baby.numBody=0;
 		mom.numBody=0;
-		//大鱼给小鱼投食触发得分统计
-		data.draw();
+		data.addScore();
 	}
 }
