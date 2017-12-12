@@ -30,7 +30,8 @@ var mx;
 var my;
 
 var data;
-window.onload=function(){
+window.onload=main;
+function main(){
 	lastTime=Date.now();
 	deltaTime=0;
 
@@ -111,9 +112,9 @@ function gameLoop(){
 	var now=Date.now();
 	deltaTime=now-lastTime;
 	lastTime=now;
-	
-	window.requestAnimationFrame(gameLoop);
+
 	drawBackground();
+	window.requestAnimationFrame(gameLoop);	
 
 	seawave.draw();
 
