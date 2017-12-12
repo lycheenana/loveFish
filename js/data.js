@@ -2,6 +2,7 @@ var dataObj=function(){
 	this.gameOver=false;
 	this.score=0;
 	this.double=1;//定义吃掉的为橘色果实
+	this.fruitNum=0;
 }
 dataObj.prototype.draw=function(){
 	ctx2.save();
@@ -17,5 +18,6 @@ dataObj.prototype.draw=function(){
 }
 dataObj.prototype.addScore=function(){
 	//得分统计
-	this.score+=100*this.double;
+	this.score+=100*this.double*this.fruitNum;
+	this.fruitNum=0;
 }
