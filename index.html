@@ -2,39 +2,42 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>鱼动画</title>
+	<title>爱心鱼小游戏</title>
 	<style type="text/css">
 		body{
 			margin:0;
 			padding:0;
 		}
-		.canvas{
+		#wrap{
 			width:800px;
 			height:600px;
 			margin:20px auto;
 			position: relative;
 		}
-		#canvas2{
+		#canvas1,#canvas2{
 			position:absolute;
 			left: 0;
 			top: 0;
+			z-index:0;
+		}
+		#canvas2{
+			z-index:1;
 		}
 	</style>
 </head>
 <body>
-	<div class="canvas">
+	<div id="wrap">
 		<canvas id="canvas1" width="800" height="600"></canvas>
 		<canvas id="canvas2" width="800" height="600"></canvas>
 	</div>
-	<script type="text/javascript" src="js/commonFunction.js"></script>
-	<script type="text/javascript" src="js/collision.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/background.js"></script>
+	<script type="text/javascript" src="js/commonFunction.js"></script>
+	<script type="text/javascript" src="js/collision.js"></script>	
 	<script type="text/javascript" src="js/seawave.js"></script>
 	<script type="text/javascript" src="js/ane.js"></script>
 	<script type="text/javascript" src="js/fruit.js"></script>
 	<script type="text/javascript" src="js/mom.js"></script>
 	<script type="text/javascript" src="js/baby.js"></script>
-	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript" src="js/score.js"></script>
 </body>
 </html>

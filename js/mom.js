@@ -1,34 +1,29 @@
-var momObj=function(){
-	this.x;
-	this.y;
-	this.angle;
-	this.numTail;
-	this.tailTimer;
-	this.numEye;
-	this.eyeTimer;
-	this.eyeInterval;
-	this.numBody;
-}
+var momObj=function(){};
+
 momObj.prototype.init=function(){
 	this.x=canWidth*0.5;
 	this.y=canHeight*0.5;
 	this.angle=0;
+
 	this.numTail=0;
 	this.tailTimer=0;
+
 	this.numEye=0;
 	this.eyeTimer=0;
 	this.eyeInterval=50;
+
 	this.numBody=0;
-}
+};
 momObj.prototype.draw=function(){
-	//设置大鱼的坐标，无限靠近鼠标移动位置mousemove
-	this.x=pointDistance(mx,this.x,0.98);
-	this.y=pointDistance(my,this.y,0.98);
+	//设置大鱼坐标，跟随鼠标指针移动
+	this.x=mx+(this.x-mx)*0.98;
+	this.y=my+(this.y-my)*0.98;
 
 	//设置坐标旋转角度，使得x轴正方向指向鼠标位置
 	var deltaX=mx-this.x;
 	var deltaY=my-this.y;
-	this.angle=angle(Math.atan2(deltaY,deltaX)+Math.PI,this.angle,0.6);
+	var mouseA=Math.atan2(deltaY,deltaX)+Math.PI;
+	this.angle=angle(mouseA,this.angle,0.6);
 
 	//尾巴tail图片循环，使得numTail的值为0——7的循环
 	this.tailTimer++;

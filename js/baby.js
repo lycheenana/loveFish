@@ -1,15 +1,4 @@
-var babyObj=function(){
-	this.x;
-	this.y;
-	this.angle;
-	this.eyeTimer;
-	this.eyeInterval;
-	this.numEye;
-	this.tailTimer;
-	this.numTail;
-	this.bodyTimer;
-	this.numBody;
-}
+var babyObj=function(){};
 babyObj.prototype.init=function(){
 	this.x=canWidth*0.5;
 	this.y=canHeight*0.5;
@@ -21,7 +10,7 @@ babyObj.prototype.init=function(){
 	this.numTail=0;
 	this.bodyTimer=0;
 	this.numBody=0;
-}
+};
 babyObj.prototype.draw=function(){
 	//设置小鱼baby的坐标，无限靠近大鱼mom
 	this.x=pointDistance(mom.x,this.x,0.96);
